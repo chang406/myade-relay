@@ -1,0 +1,49 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|compact|fork",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"C:\\path\\to\\myade\\scripts\\session-start-hook.js\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:4317/hooks/stop",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:4317/hooks/notification",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "http",
+            "url": "http://127.0.0.1:4317/hooks/session-end",
+            "timeout": 3
+          }
+        ]
+      }
+    ]
+  }
+}

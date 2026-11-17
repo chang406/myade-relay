@@ -1,0 +1,26 @@
+{
+  "name": "myade-relay",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal local relay for explicit Claude Code and Codex session handoffs",
+  "type": "module",
+  "bin": {
+    "myade-relay": "dist/src/cli.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test tests/*.test.cjs",
+    "start": "node dist/src/cli.js serve"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.12.0",
+    "zod": "3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.9",
+    "typescript": "^5.5.3"
+  },
+  "overrides": {
+    "zod": "3.25.76"
+  }
+}

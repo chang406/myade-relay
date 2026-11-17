@@ -1,0 +1,24 @@
+# 보관된 두 프로젝트의 시험이 계속 통과하는지 확인
+name: test
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        project: [myade, relay]
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ matrix.project }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm test
