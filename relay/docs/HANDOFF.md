@@ -83,11 +83,11 @@ P0의 핵심 왕복은 알려진 Codex thread를 재개하는 경로에서 실�
 
 ## 현재 증거
 
-- 실제 성공 request: `<id-3>`
+- 실제 성공 request: `<id-4>`
 - 검증 데이터: `.relay/verification2/` (Git 제외)
 - 새 thread 실제 성공 request: `<id-2>`
 - 새 thread 검증 데이터: `.relay/verification3/` (Git 제외)
-- 복구 후 실제 retry request: `<id-4>`
+- 복구 후 실제 retry request: `<id-7>`
 - 복구 retry 검증 데이터: `.relay/verification5/` (Git 제외)
 - 자동 테스트 기준선: 16 pass, 0 fail
 - 상세: `docs/TECHNICAL_VALIDATION.md`

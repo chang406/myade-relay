@@ -1,6 +1,6 @@
 # P0 technical validation
 
-> Archive note: the evidence folders referenced below (`.relay/verification*/`) were never committed and are not included. Thread, session and request IDs were replaced with placeholders.
+> Archive note: the evidence folders referenced below (`.relay/verification*/`) were never committed and are not included. Thread, session and request IDs were replaced with placeholders; the same ID uses the same placeholder in every document.
 
 Date: 2026-09-14
 
