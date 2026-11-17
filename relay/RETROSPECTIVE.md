@@ -4,7 +4,7 @@
 
 ## 하려던 것
 
-[myade](../myade/RETROSPECTIVE.md)에서 핵심만 떼어 냈다. 캐릭터, 페르소나, 데스크톱 앱, 터미널 에뮬레이터는 처음부터 범위 밖으로 뒀다([README.md](README.md)). 패키지 이름(`myade-relay`)과 데이터 폴더(`~/.myade-relay`)에 그 흔적이 남아 있다.
+[myade](../myade/RETROSPECTIVE.md)에서 핵심만 떼어 냈다. 코드를 옮긴 게 아니라 "세션 간 요청"이라는 생각만 가져와 처음부터 다시 짰다. 코드는 약 1,700줄로 myade의 절반 이하가 됐지만, 문서는 비슷하게 많았다(약 1,000줄). 캐릭터, 페르소나, 데스크톱 앱, 터미널 에뮬레이터는 처음부터 범위 밖으로 뒀다([README.md](README.md)). 패키지 이름(`myade-relay`)과 데이터 폴더(`~/.myade-relay`)에 그 흔적이 남아 있다.
 
 풀려던 문제([docs/PRD.md](docs/PRD.md)):
 - Claude Code와 Codex를 동시에 쓰다 보면, 한 세션이 다른 세션의 검토를 필요로 할 때가 있다.
@@ -27,11 +27,11 @@
 
 ## 실제로 확인한 것
 
-실제 Claude Code 2.1.218과 Codex 0.154.0으로 돌렸다([docs/TECHNICAL_VALIDATION.md](docs/TECHNICAL_VALIDATION.md)).
+실제 Claude Code 2.1.218과 Codex 0.154.0으로 확인했다. 따로 적은 항목은 예외다([docs/TECHNICAL_VALIDATION.md](docs/TECHNICAL_VALIDATION.md)).
 
 - **이미 아는 Codex 대화로 왕복.** Claude가 "31+11"을 물었고, Codex가 `42`로 답했고, Claude가 회수해 `delivered`까지 갔다.
 - **새 Codex 대화 자동 등록.** 화면이나 기록 파일을 읽지 않고 공식 `thread/started` 알림으로 대화 ID를 얻었다. 그 대화와도 왕복이 됐다.
-- **복구.** 끊긴 요청의 명시적 재시도와 서버 재시작 뒤 복구를 확인했다.
+- **복구.** 끊긴 Codex 요청의 재시도는 실제 CLI로 `accepted`까지 확인했다. 서버 재시작 뒤 복구는 CLI 없이 격리 실험으로 확인했다.
 - **진단.** 실제 CLI를 상대로 `doctor`가 통과했다.
 - **실제 실행에서만 보인 버그.** 서버가 CLI의 절대 경로를 몰라 `spawn codex ENOENT`가 두 번 났다. 실제 CLI로 돌려 보고서야 드러났다.
 - **시험.** 16개 통과. 보관 시점(2026-11)에도 그대로 통과한다.

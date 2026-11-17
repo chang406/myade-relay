@@ -1,5 +1,7 @@
 # myade-gui - 2단계: 멀티 pane 터미널 + 캐릭터 + 컴패니언
 
+> **보관: 개발 중단.** 이 문서는 2026-08 당시 기준이다. 이미 지운 기능(pane 구성 복원)과 나중에 틀린 것으로 확인된 설명(좀비 pane이 개발 모드에서만 생긴다는 내용, [../TROUBLESHOOTING.md](../TROUBLESHOOTING.md) 참고)이 남아 있다. 회고는 [../RETROSPECTIVE.md](../RETROSPECTIVE.md).
+
 하나의 창 안에 실제 셸 pane이 여러 개 그리드로 동시에 뜹니다. pane이 열리는 즉시 다른 pane과 안
 겹치는 캐릭터가 배정되어 헤더에 배지로 표시되고, 그 pane 셸의 환경변수(`MYADE_CHARACTER_ID`)로도
 심어져서 나중에 그 안에서 실행하는 `claude`가 실제로 그 캐릭터 정체성을 알고 응답합니다(배지가 UI
