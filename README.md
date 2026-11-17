@@ -1,4 +1,4 @@
-# agent-experiments
+# myade-relay
 
 > **English summary.** Two stopped experiments from my first months of building with coding agents, kept as a record. **myade** tried to be a personal agent workspace: a session-status MCP server, persona memory and a multi-pane Tauri terminal with characters. It grew beyond what I could control and was stopped. **relay** kept only the core, passing short requests between Claude Code and Codex sessions started through relay with a receipt-based state machine. It worked with real CLIs, but was paused: there was no evidence yet that the benefit outweighed the setup cost, and vendor features started to overlap. The lessons led to [baton](https://github.com/chang406/baton), which drops the server entirely and hands work across sessions with files and Git. Docs are in Korean.
 
